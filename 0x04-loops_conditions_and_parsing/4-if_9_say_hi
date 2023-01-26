@@ -3,9 +3,10 @@
 # displays "Best School" and then "Hi" on a new line
 i=0
 while [ $i -lt 10 ]
-do echo "Best School"
-	if [ "$i" -eq "9" ]
+do
+if [ "$i" -eq "9" ]
 then echo "Hi"
 fi
+echo "Best School"
 (("i += 1"))
 done
