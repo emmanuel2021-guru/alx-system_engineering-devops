@@ -2,7 +2,9 @@
 # This script configures a new Ubuntu machine to respect some requirements
 sudo apt-get update
 sudo apt-get install -y nginx
-sudo echo "Hello world!" > /var/www/html/index.nginx-debian.html
+mkdir /etc/nginx/html
+touch /etc/nginx/html/index.html
+sudo echo "Hello world!" > /etc/nginx/html/index.html
 sudo printf %s "server {
      listen 	 80 default_server;
      listen 	 [::]:80 default_server;
