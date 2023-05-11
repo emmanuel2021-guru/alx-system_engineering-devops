@@ -2,14 +2,15 @@
 # This script configures a new Ubuntu machine to respect some requirements
 sudo apt-get update
 sudo apt-get install -y nginx
-mkdir /etc/nginx/html
-touch /etc/nginx/html/index.html
+sudo mkdir /etc/nginx/html
+sudo touch /etc/nginx/html/index.html
 sudo echo "Hello world!" > /etc/nginx/html/index.html
 sudo printf %s "server {
      listen 	 80 default_server;
      listen 	 [::]:80 default_server;
      root 	 /etc/nginx/html;
      index 	 index.html index.htm;
+     server_name _;
 }
 " > /etc/nginx/sites-available/default
 sudo service nginx restart
