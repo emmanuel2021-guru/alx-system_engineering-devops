@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 # This script gets Apache to run on a docker container
 # and to return a page containing "Hello Holberton" when querying the root of it
-echo "ServerName localhost" >> /etc/apache2.conf
+apt-get update
+apt-get install -y apache2
+echo "ServerName localhost" >> /etc/apache2/apache2.conf
+echo "Hello Holberton" > /var/www/html/index.html
 service apache2 start
