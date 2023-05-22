@@ -3,7 +3,7 @@
 # and to return a page containing "Hello Holberton" when querying the root of it
 apt-get update
 apt-get install -y apache2
-echo "ServerName localhost" >> /etc/apache2/apache2.conf
+echo "ServerName 0.0.0.0" >> /etc/apache2/apache2.conf
 echo "Hello Holberton" > /var/www/html/index.html
 service apache2 start
 service apache2 status
