@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# This script displays information for the subdomains 'www', 'lb-01', 'web-01' and 'web-02' for the domain parameter provided
+if [ "$2" != "" ];
+then
+	hostname=$(echo "$2"."$1")
+else
+	hostname=$(echo "$1")
+fi
+info () {
+	record=$(dig $hostname | grep -A1 'ANSWER SECTION:' | awk ' NR==2 { print $4 } ')
+	ip=$(dig $hostname | grep -A1 'ANSWER SECTION:' | awk ' NR==2 { print $5 } ')
+	echo The subdomain "$2" is a "$record" record and points to "$ip"
+}
+if [ "$2" != "" ];
+then
+	info "$1" "$2"
+else
+	info "$1" "www"
+	info "$1" "lb-01"
+	info "$1" "web-01"
+	info "$1" "web-02"
+fi
