@@ -3,9 +3,9 @@
 """This script uses a REST API for a given employee ID
 and returns information about his/her TODO list progress"""
 
+import json
 import requests
 import sys
-import json
 
 
 if __name__ == "__main__":
