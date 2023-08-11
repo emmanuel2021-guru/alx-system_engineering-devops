@@ -17,7 +17,6 @@ if __name__ == "__main__":
     for task in all_user_tasks:
         if task['userId'] not in id_list:
             id_list.append(task['userId'])
-    print(id_list)
     filename = "todo_all_employees.json"
     all_user_tasks_dict = {}
     for user_id in id_list:
