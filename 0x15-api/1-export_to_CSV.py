@@ -21,7 +21,7 @@ if __name__ == "__main__":
     rows = []
     for task in user_tasks:
         row = []
-        row.append('{}'.format(user_info['name']))
+        row.append('{}'.format(user_info['id']))
         row.append('{}'.format(user_info['username']))
         row.append('{}'.format(task['completed']))
         row.append('{}'.format(task['title']))
