@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 # This script gets Apache to run on a docker container
 # and to return a page containing "Hello Holberton" when querying the root of it
+sudo service apache2 status
 sudo service apache2 start
