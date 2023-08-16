@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# This script configures a container to run nginx as the 'nginx' user
+chmod 644 /etc/nginx/nginx.conf
+sudo -u nginx service nginx start
