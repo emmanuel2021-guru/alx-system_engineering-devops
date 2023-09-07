@@ -7,8 +7,8 @@ sudo apt-get install -y nginx
 sudo mkdir /etc/nginx/html
 sudo touch /etc/nginx/html/index.html
 echo "Hello world!" > /etc/nginx/html/index.html
-sudo touch /usr/share/nginx/html/custom_404.html
-echo "Ceci n'est pas une page" > /usr/share/nginx/html/custom_404.html
+sudo touch /etc/nginx/html/custom_404.html
+echo "Ceci n'est pas une page" > /etc/nginx/html/custom_404.html
 printf %s "server {
 	listen 		80 default_server;
 	listen		[::]:80 default_server;
@@ -17,10 +17,6 @@ printf %s "server {
 	server_name 	_;
 
 	error_page 404 /custom_404.html;
-	location = /custom_404.html {
-		root /usr/share/nginx/html;
-		internal;
-	}
 
 	location /redirect_me {
 		return 301 http://facebook.com/;
