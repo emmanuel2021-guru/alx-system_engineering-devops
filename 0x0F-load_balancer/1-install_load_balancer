@@ -9,7 +9,7 @@ printf %s "frontend web-frontend
 
 backend web-backend
 	balance roundrobin
-	server web-01 54.166.72.154:80 check
-	server web-02 34.224.94.88:80 check
+	server web-01 54.236.28.52:80 check
+	server web-02 18.234.105.212:80 check
 	" > /etc/haproxy/haproxy.cfg
 sudo service haproxy restart
