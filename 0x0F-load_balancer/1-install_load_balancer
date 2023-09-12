@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # This script installs and configures haproxy on a server
 sudo apt update
-sudo apt install haproxy
+sudo apt install -y haproxy
 printf %s "frontend web-frontend
 	bind *:80
 	mode http
